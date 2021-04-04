@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: off
+  kafka:
+    consumer:
+      bootstrap-servers: kafka:9092
+      group-id: "group_id"
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: kafka:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysqldb:3306/kartacadb?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: mefe
+    password: mefe123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
